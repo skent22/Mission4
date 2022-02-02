@@ -15,15 +15,31 @@ namespace Mission4.Models
         }
 
         public DbSet<AddMovie> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Category>().HasData(
+                    new Category { CategoryID=1, CategoryName="Action/Adventure"},
+                    new Category { CategoryID = 2, CategoryName = "Sci-fi" },
+                    new Category { CategoryID = 3, CategoryName = "Comedy" },
+                    new Category { CategoryID = 4, CategoryName = "Horror" },
+                    new Category { CategoryID = 5, CategoryName = "Drama" },
+                    new Category { CategoryID = 6, CategoryName = "Romance" },
+                    new Category { CategoryID = 7, CategoryName = "Thriller" },
+                    new Category { CategoryID = 8, CategoryName = "Fantasy" },
+                    new Category { CategoryID = 9, CategoryName = "Western" },
+                    new Category { CategoryID = 10, CategoryName = "Crime" },
+                    new Category { CategoryID = 11, CategoryName = "Animation" },
+                    new Category { CategoryID = 12, CategoryName = "War" },
+                    new Category { CategoryID = 13, CategoryName = "Documentary" }
+                );
             modelBuilder.Entity<AddMovie>().HasData(
                 //Seed database
                 new AddMovie
                 {
                     MovieID = 1,
-                    Category = "Action/Adventure",
+                    CategoryID = 1,
                     Title = "The Dark Knight",
                     Year = 2008,
                     Director = "Christopher Nolan",
@@ -35,7 +51,7 @@ namespace Mission4.Models
                 new AddMovie
                 {
                     MovieID = 2,
-                    Category = "Sci-fi",
+                    CategoryID = 2,
                     Title = "Star Wars: Episode VI-Return of the Jedi",
                     Year = 1983,
                     Director = "Richard Marquand",
@@ -47,7 +63,7 @@ namespace Mission4.Models
                 new AddMovie
                 {
                     MovieID = 3,
-                    Category = "War/Drama",
+                    CategoryID = 12,
                     Title = "In This Corner of the World",
                     Year = 2016,
                     Director = "Sunao Katabuchi",

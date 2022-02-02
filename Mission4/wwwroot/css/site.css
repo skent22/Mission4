@@ -61,8 +61,8 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background-image: url('file:///C:\Users\kentl\source\repos\Mission4\Mission4\wwwroot\img\theater.jpg');
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -116,5 +116,8 @@ body {
 
 .form button {
     margin-left: 20px;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 

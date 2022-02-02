@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Delete Movie";
+}
+
+@model AddMovie 
+<div class="text-center">
+
+    <h2>Are you sure want to remove @Model.Title from the Database?</h2>
+
+    <!--form contains the ability to delete the record or hit cancel. Either option returns the user to the database screen -->
+    <form method="post" asp-action="Delete">
+        <button type="submit" class="btn-outline-secondary">Delete</button>
+        <br /><br />
+        <a asp-controller="Home" asp-action="MovieDatabase" class="btn btn-outline-primary">Cancel</a>
+
+        <input type="hidden" asp-for="MovieID" />
+    </form>
+
+</div>
